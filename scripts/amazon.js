@@ -100,8 +100,16 @@ document.querySelectorAll(".js-add-to-cart")
         });
       }
 
+      // too store the quantity
+      let cartquatity = 0;
+      cart.forEach((item)=>{
 
-      console.log(cart)
+        cartquatity += item.quantity;
+
+      });
+
+      // to show the quantity in the div elemnt
+      document.querySelector(".js-cart-quantity").innerHTML = cartquatity;
 
   });
 });
