@@ -52,7 +52,8 @@ products.forEach((product) => {
         Added
       </div>
 
-      <button class="add-to-cart-button button-primary">
+      <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id = "${product.id}" >
+      
         Add to Cart
       </button>
     </div>
@@ -62,3 +63,47 @@ products.forEach((product) => {
 
 // why outside the loop becoz efficient
 document.querySelector(".js-grid-product").innerHTML = productHTML;
+
+
+document.querySelectorAll(".js-add-to-cart")
+  .forEach((button) => {
+    button.addEventListener("click",()=>{
+      
+      // to get the name of the prouct
+      const productId =  button.dataset.productId;
+
+      let matchingitem;
+
+      // to check the the product is exits or not
+      cart.forEach((item)=>{
+        if(item.productId === productId){
+          matchingitem = item;
+
+
+        }
+
+      });
+
+      // y means if item found it always incremenet
+      if(matchingitem)
+      {
+        matchingitem.quantity +=1;
+
+      }
+
+      // if not set to i
+      else{
+        //push to the cart
+        cart.push({
+          productId: productId,
+          quantity: 1,
+        });
+      }
+
+
+      console.log(cart)
+
+  });
+});
+
+
