@@ -1,0 +1,21 @@
+<img class="js-product-image product-image" src="images/products/black-2-slot-toaster.jpg" data-testid="product-image">
+
+<div class="product-name limit-to-2-lines">
+            2 Slot Toaster - Black
+          </div>
+
+
+          <img class="js-product-image product-image" src="images/products/6-piece-white-dinner-plate-set.jpg" data-testid="product-image">
+
+
+          
+            6 Piece White Dinner Plate Set
+
+
+<div class="product-name limit-to-2-lines">
+            6-Piece Nonstick, Carbon Steel Oven Bakeware Baking Set
+          </div>
+
+
+<img class="js-product-image product-image" src="images/products/6-piece-non-stick-baking-set.webp" data-testid="product-image">
+          
