@@ -3,6 +3,12 @@ import {
   // to get that variable
   cart
 } from '../data/cart.js'
+
+
+import {
+  products
+} from '../data/products.js';
+
 // to combine the html to webpage
 let productHTML = ''
 
