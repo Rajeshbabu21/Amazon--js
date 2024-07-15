@@ -1,4 +1,8 @@
 
+import {
+  // to get that variable
+  cart
+} from '../data/cart.js'
 // to combine the html to webpage
 let productHTML = ''
 
@@ -100,7 +104,7 @@ document.querySelectorAll(".js-add-to-cart")
         });
       }
 
-      // too store the quantity
+      // too store the quantity in the symbol
       let cartquatity = 0;
       cart.forEach((item)=>{
 
