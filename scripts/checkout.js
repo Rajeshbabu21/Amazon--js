@@ -1,5 +1,5 @@
 // save the data
-import { cart ,removecart} from "../data/cart.js";
+import { cart ,removefromcart} from "../data/cart.js";
 
 import { products } from "../data/products.js";
 
