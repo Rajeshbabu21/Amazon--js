@@ -1,13 +1,16 @@
 
 import {
   // to get that variable
-  cart
+  cart,addtocart
 } from '../data/cart.js'
 
 
 import {
   products
 } from '../data/products.js';
+
+
+
 
 // to combine the html to webpage
 let productHTML = ''
@@ -75,51 +78,31 @@ products.forEach((product) => {
 document.querySelector(".js-grid-product").innerHTML = productHTML;
 
 
+
+// this code add the in web page
+function updatecart()
+{
+  // too store the quantity in the symbol
+  let cartquatity = 0;
+  cart.forEach((cartitem) => {
+    cartquatity += cartitem.quantity;
+  });
+
+  // to show the quantity in the div elemnt
+  document.querySelector(".js-cart-quantity").innerHTML = cartquatity;
+}
+
+
 document.querySelectorAll(".js-add-to-cart")
   .forEach((button) => {
     button.addEventListener("click",()=>{
       
       // to get the name of the prouct
-      const productId =  button.dataset.productId;
+     let productId =  button.dataset.productId;
 
-      let matchingitem;
+      addtocart();  // to cart
+      updatecart(); // to page
 
-      // to check the the product is exits or not
-      cart.forEach((item)=>{
-        if(item.productId === productId){
-          matchingitem = item;
-
-
-        }
-
-      });
-
-      // y means if item found it always incremenet
-      if(matchingitem)
-      {
-        matchingitem.quantity +=1;
-
-      }
-
-      // if not set to i
-      else{
-        //push to the cart
-        cart.push({
-          productId: productId,
-          quantity: 1,
-        });
-      }
-
-      // too store the quantity in the symbol
-      let cartquatity = 0;
-      cart.forEach((item)=>{
-
-        cartquatity += item.quantity;
-
-      });
-
-      // to show the quantity in the div elemnt
-      document.querySelector(".js-cart-quantity").innerHTML = cartquatity;
 
   });
 });
